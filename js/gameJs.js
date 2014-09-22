@@ -1,7 +1,6 @@
 var words = [
-	'korv',
-	'penisballe',
-	'rumpnisse',
+
+
 ];
 
 var userScore = 0;
@@ -19,14 +18,14 @@ function game() {
 	startTimer = new Date();
 	console.log(startTimer);
 	do {
-		rngWords = words[Math.floor(Math.random() * words.length)];
-		userInput = prompt(rngWords + ' \n type it motherfucker!');
+		rngWords = eWords[Math.floor(Math.random() * eWords.length)];
+		userInput = prompt(rngWords + ' \n type it, FAST!');
 		if (userInput === rngWords) {
 			console.log('good');
 			userScore++;
 			gameTimer++;
 		} else {
-			console.log('noob');
+			console.log('wrong!');
 			gameTimer++;
 			startTimer.setSeconds(startTimer.getSeconds() - 10);
 		}
@@ -42,8 +41,8 @@ function game() {
 function game2() {
 	startTimer2 = new Date();
 	do {
-		rngWords = words[Math.floor(Math.random() * words.length)];
-		userInput = prompt(rngWords + ' \n type it motherfucker!');
+		rngWords = eWords[Math.floor(Math.random() * eWords.length)];
+		userInput = prompt(rngWords + ' \n type it, even faster!');
 		if (userInput === rngWords) {
 			console.log('good');
 			userScore2++;
@@ -56,7 +55,7 @@ function game2() {
 	} while (gameTimer2 < 3);
 	endTimer2 = new Date();
 	var responseTime2 = (endTimer2.getTime() - startTimer2.getTime()) / 1000;
-	console.log(responseTime2);
+	console.log(responseTime2 + ' player2');
 	timeSaver2.push(responseTime2);
 
 }
@@ -67,9 +66,9 @@ game2();
 results();
 
 function results() {
-	if (timeSaver < timeSaver2) {
-		console.log('player1 winner ' + timeSaver);
+	if (timeSaver[0] < timeSaver2[0]) {
+		console.log('player1 winner ' + timeSaver[0]);
 	} else {
-		console.log('player 2 winner ' + timeSaver2);
+		console.log('player 2 winner ' + timeSaver2[0]);
 	}
 }
