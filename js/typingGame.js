@@ -8,6 +8,7 @@ var words = [
 	'lassekronér',
 	'Lewbowski',
 	'Deathwalka',
+	'skit'
 ];
 
 var startTimer = new Date();
