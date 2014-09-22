@@ -14,6 +14,7 @@ var rndWordPlayer2 = Math.floor(Math.random() * words.length);
 var rndWordsPlayer2 = words[rndWordPlayer2];
 var startGame = prompt('To star game please enter GO');
 startGame = startGame.toUpperCase();
+var hehe;
 
 if (player === 0) {
 	var userTyping = prompt('Type the word before the time runs out! ' + rndWordsPlayer1 + ' Poäng: ' + poangPlayer1);
