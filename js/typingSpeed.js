@@ -12,7 +12,6 @@ var rndWordPlayer1, rndWordsPlayer1, rndWordPlayer2, rndWordsPlayer2, userTyping
 
 var startGame = prompt('To star game please enter GO');
 startGame = startGame.toUpperCase();
-var hehe;
 
 var typingPlayer1 = function () {
 	rndWordPlayer1 = Math.floor(Math.random() * words.length);
