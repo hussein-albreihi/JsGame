@@ -7,10 +7,12 @@ var words = [
 	'apple',
 	'orange'
 ];
-var rndWordPlayer1, rndWordsPlayer1, rndWordPlayer2, rndWordsPlayer2, userTypingPlayer1, userTypingPlayer2, reset;
+var rndWordPlayer1, rndWordsPlayer1, rndWordPlayer2, rndWordsPlayer2, userTypingPlayer1, userTypingPlayer2, reset, choose;
 
-var choose = prompt('choose a game');
+
+choose = prompt('choose a game: time or points');
 choose = choose.toUpperCase();
+
 
 var typingPlayer1 = function () {
 	rndWordPlayer1 = Math.floor(Math.random() * words.length);
@@ -29,12 +31,12 @@ var pointsGame = function () {
 		alert('Player 1 get ready');
 		for (var i = 0; i <= 3; i++) {
 			if (userTypingPlayer1 === rndWordsPlayer1) {
-				console.log('grattis');
 				typingPlayer1();
+				console.log('grattis');
 				poangPlayer1 = poangPlayer1 + 1;
 			} else {
-				console.log('fail');
 				poangPlayer1 = poangPlayer1 - 1;
+				console.log('fail');
 				typingPlayer1();
 			}
 		}
@@ -44,12 +46,12 @@ var pointsGame = function () {
 		alert('get ready player 2!'); {
 		for (var y = 0; y <= 3; y++) {
 			if (userTypingPlayer2 === rndWordsPlayer2) {
-				console.log('grattis');
 				typingPlayer2();
+				console.log('grattis');
 				poangPlayer2 = poangPlayer2 + 1;
 			} else {
-				console.log('fail');
 				poangPlayer2 = poangPlayer2 - 1;
+				console.log('fail');
 				typingPlayer2();
 			}
 		}
@@ -82,8 +84,16 @@ var timeGame = function () {
 	//Maxi spel
 };
 
-if (choose === 'POINTS') {
+switch (choose) {
+case 'POINTS':
 	pointsGame();
-} else {
+	break;
+case 'TIME':
 	timeGame();
+	break;
+default:
+	alert('Please make a choice between time or points');
+	choose = prompt('choose a game: time or points');
+	choose = choose.toUpperCase();
+	break;
 }
