@@ -5,7 +5,8 @@ var player = 0;
 var words = [
 	'banana',
 	'apple',
-	'orange'
+	'orange',
+	'penis'
 ];
 var rndWordPlayer1, rndWordsPlayer1, rndWordPlayer2, rndWordsPlayer2, userTypingPlayer1, userTypingPlayer2, reset, choose;
 
@@ -81,7 +82,6 @@ var pointsGame = function () {
 
 var timeGame = function () {
 
-	//Maxi spel
 };
 
 switch (choose) {
