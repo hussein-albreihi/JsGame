@@ -1,6 +1,5 @@
 var poangPlayer1 = 0;
 var poangPlayer2 = 0;
-var slutPoang;
 var name = [];
 var player = 0;
 var words = [
@@ -10,8 +9,8 @@ var words = [
 ];
 var rndWordPlayer1, rndWordsPlayer1, rndWordPlayer2, rndWordsPlayer2, userTypingPlayer1, userTypingPlayer2, reset;
 
-var startGame = prompt('To star game please enter GO');
-startGame = startGame.toUpperCase();
+var choose = prompt('choose a game');
+choose = choose.toUpperCase();
 
 var typingPlayer1 = function () {
 	rndWordPlayer1 = Math.floor(Math.random() * words.length);
@@ -25,13 +24,14 @@ var typingPlayer2 = function () {
 	userTypingPlayer2 = prompt('Type the word before the time runs out! ' + rndWordsPlayer2 + ' Poäng: ' + poangPlayer2);
 };
 
-var gameReset = function () {
+var pointsGame = function () {
 	if (player === 0) {
+		alert('Player 1 get ready');
 		for (var i = 0; i <= 3; i++) {
 			if (userTypingPlayer1 === rndWordsPlayer1) {
 				console.log('grattis');
-				poangPlayer1 = poangPlayer1 + 1;
 				typingPlayer1();
+				poangPlayer1 = poangPlayer1 + 1;
 			} else {
 				console.log('fail');
 				poangPlayer1 = poangPlayer1 - 1;
@@ -40,12 +40,13 @@ var gameReset = function () {
 		}
 		player = player + 1;
 	}
-	if (player === 1) {
+	if (player === 1)
+		alert('get ready player 2!'); {
 		for (var y = 0; y <= 3; y++) {
 			if (userTypingPlayer2 === rndWordsPlayer2) {
 				console.log('grattis');
-				poangPlayer2 = poangPlayer2 + 1;
 				typingPlayer2();
+				poangPlayer2 = poangPlayer2 + 1;
 			} else {
 				console.log('fail');
 				poangPlayer2 = poangPlayer2 - 1;
@@ -54,7 +55,11 @@ var gameReset = function () {
 		}
 		if (poangPlayer1 >= poangPlayer2) {
 			alert('Grattis! Player1 vann!');
-		} else {
+		}
+		if (poangPlayer1 === poangPlayer2) {
+			alert('it\'s a draw!');
+		}
+		if (poangPlayer1 <= poangPlayer2) {
 			alert('Grattis! Player2 vann!');
 		}
 		player = player + 1;
@@ -66,15 +71,19 @@ var gameReset = function () {
 		poangPlayer1 = 0;
 		poangPlayer2 = 0;
 		player = 0;
-		gameReset();
+		pointsGame();
 	} else {
 		alert('Plz donate money 4 weed');
 	}
 };
 
+var timeGame = function () {
 
-if (startGame === 'GO') {
-	gameReset();
+	//Maxi spel
+};
+
+if (choose === 'POINTS') {
+	pointsGame();
 } else {
-	prompt('please write GO to start game');
+	timeGame();
 }
