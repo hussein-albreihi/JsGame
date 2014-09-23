@@ -6,13 +6,21 @@ goneTyping.ui.setPlayerWord = function (word) {
 	return playerWord;
 };
 
-goneTyping.ui.getPlayers = function () {
+goneTyping.ui.getTotalPlayers = function () {
 	var numberOfPlayers = prompt('Please enter number of players!');
-	numberOfPlayers = Number(numberOfPlayers);
-	return numberOfPlayers;
+	return Number(numberOfPlayers);
 };
 
 goneTyping.ui.getPlayerNames = function () {
-	var playerName = prompt('what is your name?');
-	return playerName;
+	var playerName = prompt('What is the name of the player');
+	return String(playerName);
+};
+
+goneTyping.ui.getNumberOfTries = function () {
+	var totalTries = prompt('How many times do you want to try?');
+	return Number(totalTries);
+};
+
+goneTyping.ui.getReady = function (player) {
+	alert('Get ready Player ' + player);
 };
