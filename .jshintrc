@@ -22,6 +22,13 @@
       "console": false,
       "prompt": false,
       "alert": false,
+<<<<<<< HEAD
       "_": false
   }
 }
+=======
+      "goneTyping": false,
+      "_": false
+  }
+}
+>>>>>>> 38e412389ed00a83a16e23e4e51dfd7827f0f9d8
