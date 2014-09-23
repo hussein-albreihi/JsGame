@@ -1,6 +1,6 @@
 'use strict';
 
 goneTyping.play = function () {
-	var rounds = 0;
-	var startTime, endTime = new Date();
+	var players = goneTyping.logic.createPlayers(2);
+	console.log(players);
 };

@@ -1,9 +1,6 @@
 'use strict';
 goneTyping.logic = {};
 
-//lägg till i play istället senare
-var players = [];
-
 goneTyping.logic.getRandomWord = function () {
 	return goneTyping.words.wordList[Math.floor(Math.random() * goneTyping.words.wordList.length)];
 };
@@ -15,13 +12,13 @@ goneTyping.logic.playerFactory = function (name, time) {
 	return that;
 };
 
-goneTyping.logic.createPlayers = function () {
-	var numberOfPlayers = goneTyping.ui.getPlayers();
+goneTyping.logic.createPlayers = function (numberOfPlayers) {
+	var players = [];
 	for (var i = 0; i < numberOfPlayers; i++) {
 		var playerName = goneTyping.ui.getPlayerNames();
 		players.push(goneTyping.logic.playerFactory(playerName));
 	}
-	console.log(players);
+	return players;
 };
 
 goneTyping.logic.checkInput = function (playerInput, word) {
