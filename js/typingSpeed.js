@@ -43,6 +43,7 @@ var resetGame = function () {
 var pointsGame = function () {
 	if (player === 1) {
 		alert('Player 1 get ready');
+		alert(userTypingPlayer1);
 		for (var i = 0; i < 3; i++) {
 			//denna ifsats makes no sense( båda är undefined.), måste göras om.
 			if (userTypingPlayer1 === rndWordsPlayer1) {
