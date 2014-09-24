@@ -7,7 +7,7 @@ goneTyping.logic.getRandomWord = function () {
 };
 
 //Create a new player to a playerFactory object.
-goneTyping.logic.playerFactory = function (name, time) {
+goneTyping.logic.playerFactory = function (name, time, playerPoints) {
 	var that = {};
 	that.player = name;
 	that.playerPoints = 0;
@@ -33,4 +33,7 @@ goneTyping.logic.checkInput = function (playerInput, word) {
 //Do a scoreboard of the best player.
 goneTyping.logic.showScores = function () {
 	// will add code here.
+};
+goneTyping.logic.setPoints = function (points) {
+	points.push(goneTyping.logic.playerFactory(points));
 };
