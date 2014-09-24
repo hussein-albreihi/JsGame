@@ -24,3 +24,7 @@ goneTyping.ui.getNumberOfTries = function () {
 goneTyping.ui.getReady = function (player) {
 	alert('Get ready Player ' + player);
 };
+
+goneTyping.ui.showWinner = function (x) {
+	alert('The winner is' + x[1]);
+};

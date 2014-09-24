@@ -31,26 +31,15 @@ goneTyping.logic.checkInput = function (playerInput, word) {
 };
 
 //Do a scoreboard of the best player.
-<<<<<<< HEAD
-goneTyping.logic.showScores = function () {
-	// will add code here.
-};
-
-goneTyping.logic.setPoints = function () {
-
-=======
 goneTyping.logic.showScores = function (players) {
-	console.log('Scoreboard :\n');
 	var min = 0;
+	var winner;
 	min = players[0].playerTime;
-
 	for (var i = 0; i < players.length; i++) {
-		console.log('Player: ' + players[i].player + '\nPlayer score: ' + players[i].playerTime);
-
 		if (players[i].playerTime < min) {
 			min = players[i].playerTime;
+			winner = players[i];
 		}
 	}
-	console.log('\nPlayer with best time: ' + '\nTime: ' + min);
->>>>>>> 1002d078bad9800bb30ac8102c8822ee7b93068f
+	return [min, winner];
 };

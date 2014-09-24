@@ -12,11 +12,7 @@ goneTyping.play = function () {
 	for (var i = 0; i < players.length; i++) {
 		console.log('___________Loop ' + i + ' Start_____________');
 		//Försök fixa till spelarnamn?
-<<<<<<< HEAD
-		goneTyping.ui.getReady(players[i]);
-=======
 		goneTyping.ui.getReady(players[i].player);
->>>>>>> 1002d078bad9800bb30ac8102c8822ee7b93068f
 		//Lägg till tidenräknaren här?
 		goneTyping.timer.start();
 		for (var x = 0; x < numberOfTries; x++) {
@@ -38,5 +34,8 @@ goneTyping.play = function () {
 		console.log('___________Loop ' + i + ' Finished__________');
 
 	}
-	goneTyping.logic.showScores(players);
+	var a = goneTyping.logic.showScores(players);
+	console.log(a[0]);
+
+	goneTyping.ui.showWinner(a);
 };
