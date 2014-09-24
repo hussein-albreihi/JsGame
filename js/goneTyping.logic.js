@@ -7,10 +7,10 @@ goneTyping.logic.getRandomWord = function () {
 };
 
 //Create a new player to a playerFactory object.
-goneTyping.logic.playerFactory = function (name, time, playerPoints) {
+goneTyping.logic.playerFactory = function (name, points, time) {
 	var that = {};
 	that.player = name;
-	that.playerPoints = 0;
+	that.playerPoints = points;
 	that.playerTime = time;
 	return that;
 };
@@ -31,9 +31,17 @@ goneTyping.logic.checkInput = function (playerInput, word) {
 };
 
 //Do a scoreboard of the best player.
-goneTyping.logic.showScores = function () {
-	// will add code here.
-};
-goneTyping.logic.setPoints = function (points) {
-	points.push(goneTyping.logic.playerFactory(points));
+goneTyping.logic.showScores = function (players) {
+	console.log('Scoreboard :\n');
+	var min = 0;
+	min = players[0].playerTime;
+
+	for (var i = 0; i < players.length; i++) {
+		console.log('Player: ' + players[i].player + '\nPlayer score: ' + players[i].playerTime);
+
+		if (players[i].playerTime < min) {
+			min = players[i].playerTime;
+		}
+	}
+	console.log('\nPlayer with best time: ' + '\nTime: ' + min);
 };
