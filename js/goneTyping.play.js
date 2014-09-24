@@ -7,11 +7,14 @@ goneTyping.play = function () {
 		points = 0,
 		randomWord;
 
+	console.log(players);
+
 	for (var i = 0; i < players.length; i++) {
 		console.log('___________Loop ' + i + ' Start_____________');
 		//Försök fixa till spelarnamn?
-		goneTyping.ui.getReady(i);
+		goneTyping.ui.getReady(players[i].player);
 		//Lägg till tidenräknaren här?
+		goneTyping.timer.start();
 		for (var x = 0; x < numberOfTries; x++) {
 			randomWord = goneTyping.logic.getRandomWord();
 			playerWord = goneTyping.ui.setPlayerWord(randomWord);
@@ -23,7 +26,13 @@ goneTyping.play = function () {
 			console.log('Player ' + i + ' points: ' + points);
 			console.log('____________________________________');
 		}
+		goneTyping.timer.stop();
+		var time = goneTyping.timer.getTime();
+
+		players[i].playerTime = time;
+
 		console.log('___________Loop ' + i + ' Finished__________');
+
 	}
-	//showScores();
+	goneTyping.logic.showScores(players);
 };
