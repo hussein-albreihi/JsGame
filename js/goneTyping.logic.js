@@ -34,3 +34,7 @@ goneTyping.logic.checkInput = function (playerInput, word) {
 goneTyping.logic.showScores = function () {
 	// will add code here.
 };
+
+goneTyping.logic.setPoints = function () {
+
+};

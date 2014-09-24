@@ -10,7 +10,7 @@ goneTyping.play = function () {
 	for (var i = 0; i < players.length; i++) {
 		console.log('___________Loop ' + i + ' Start_____________');
 		//Försök fixa till spelarnamn?
-		goneTyping.ui.getReady(i);
+		goneTyping.ui.getReady(players[i]);
 		//Lägg till tidenräknaren här?
 		for (var x = 0; x < numberOfTries; x++) {
 			randomWord = goneTyping.logic.getRandomWord();
