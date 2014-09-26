@@ -38,7 +38,6 @@ goneTyping.logic.showScores = function (players) {
 	for (var i = 0; i < players.length; i++) {
 		if (players[i].playerTime < min) {
 			min = players[i].playerTime;
-			winner = players[i];
 		}
 	}
 	return [min, winner];
