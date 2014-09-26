@@ -32,13 +32,14 @@ goneTyping.logic.checkInput = function (playerInput, word) {
 
 //Do a scoreboard of the best player.
 goneTyping.logic.showScores = function (players) {
-	var min = 0;
-	var winner;
+	var min = 0,
+		winner = 0;
 	min = players[0].playerTime;
+	winner = players[0].playerName;
 	for (var i = 0; i < players.length; i++) {
 		if (players[i].playerTime < min) {
 			min = players[i].playerTime;
-			winner = players[i];
+			winner = players[i].playerName;
 		}
 	}
 	return [min, winner];

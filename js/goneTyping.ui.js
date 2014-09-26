@@ -26,5 +26,5 @@ goneTyping.ui.getReady = function (player) {
 };
 
 goneTyping.ui.showWinner = function (x) {
-	alert('The winner is' + x[1]);
+	alert('The winner is' + x);
 };

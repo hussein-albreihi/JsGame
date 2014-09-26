@@ -35,7 +35,7 @@ goneTyping.play = function () {
 
 	}
 	var a = goneTyping.logic.showScores(players);
-	console.log(a[0]);
+	console.log('time ' + a[0] + ' player ' + a[1]);
 
-	goneTyping.ui.showWinner(a);
+	//goneTyping.ui.showWinner(a);
 };
