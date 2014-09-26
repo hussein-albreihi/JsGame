@@ -3,11 +3,14 @@
 goneTyping.ui = {};
 goneTyping.ui.setPlayerWord = function (word) {
 	var playerWord = prompt('Word: ' + word);
-	return playerWord;
+	return String(playerWord);
 };
 
 goneTyping.ui.getTotalPlayers = function () {
 	var numberOfPlayers = prompt('Please enter number of players!');
+	if (isNaN(numberOfPlayers)) {
+		goneTyping.play();
+	}
 	return Number(numberOfPlayers);
 };
 
@@ -26,5 +29,9 @@ goneTyping.ui.getReady = function (player) {
 };
 
 goneTyping.ui.showWinner = function (x) {
+<<<<<<< HEAD
 	alert('The winner is' + x);
+=======
+	alert('The winner is: ' + x);
+>>>>>>> dev
 };

@@ -3,7 +3,7 @@ goneTyping.logic = {};
 
 //Get a random word from the list: wordList in goneTyping.words.js
 goneTyping.logic.getRandomWord = function () {
-	return goneTyping.words.wordList[Math.floor(Math.random() * goneTyping.words.wordList.length)];
+	return String(goneTyping.words.wordList[Math.floor(Math.random() * goneTyping.words.wordList.length)]);
 };
 
 //Create a new player to a playerFactory object.
@@ -25,22 +25,39 @@ goneTyping.logic.createPlayers = function (numberOfPlayers) {
 	return players;
 };
 
-//K
 goneTyping.logic.checkInput = function (playerInput, word) {
 	return (playerInput === word);
+};
+goneTyping.logic.addTimeToPlayer = function (players, time) {
+	players.playerTime = time;
 };
 
 //Do a scoreboard of the best player.
 goneTyping.logic.showScores = function (players) {
+<<<<<<< HEAD
 	var min = 0,
 		winner = 0;
 	min = players[0].playerTime;
 	winner = players[0].playerName;
+=======
+	var min = 0;
+	var winner = 0;
+	min = players[0].playerTime;
+	winner = players[0].player;
+	console.log('_________Scoreboard________');
+>>>>>>> dev
 	for (var i = 0; i < players.length; i++) {
+		console.log('| Player: ' + players[i].player + ' | Time: ' + players[i].playerTime + ' |');
 		if (players[i].playerTime < min) {
 			min = players[i].playerTime;
+<<<<<<< HEAD
 			winner = players[i].playerName;
+=======
+			winner = players[i].player;
+>>>>>>> dev
 		}
+
 	}
+	console.log('_________________________');
 	return [min, winner];
 };
