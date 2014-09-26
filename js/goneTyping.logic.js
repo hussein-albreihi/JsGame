@@ -34,29 +34,17 @@ goneTyping.logic.addTimeToPlayer = function (players, time) {
 
 //Do a scoreboard of the best player.
 goneTyping.logic.showScores = function (players) {
-<<<<<<< HEAD
 	var min = 0,
 		winner = 0;
 	min = players[0].playerTime;
-	winner = players[0].playerName;
-=======
-	var min = 0;
-	var winner = 0;
-	min = players[0].playerTime;
 	winner = players[0].player;
-	console.log('_________Scoreboard________');
->>>>>>> dev
+	console.log('_________Scoreboard___________');
 	for (var i = 0; i < players.length; i++) {
 		console.log('| Player: ' + players[i].player + ' | Time: ' + players[i].playerTime + ' |');
 		if (players[i].playerTime < min) {
 			min = players[i].playerTime;
-<<<<<<< HEAD
-			winner = players[i].playerName;
-=======
 			winner = players[i].player;
->>>>>>> dev
 		}
-
 	}
 	console.log('_________________________');
 	return [min, winner];

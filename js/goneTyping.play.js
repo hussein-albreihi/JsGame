@@ -21,11 +21,5 @@ goneTyping.play = function () {
 
 	}
 	var a = goneTyping.logic.showScores(players);
-<<<<<<< HEAD
-	console.log('time ' + a[0] + ' player ' + a[1]);
-
-	//goneTyping.ui.showWinner(a);
-=======
 	goneTyping.ui.showWinner(a[1]);
->>>>>>> dev
 };

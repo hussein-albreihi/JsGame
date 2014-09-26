@@ -29,9 +29,5 @@ goneTyping.ui.getReady = function (player) {
 };
 
 goneTyping.ui.showWinner = function (x) {
-<<<<<<< HEAD
-	alert('The winner is' + x);
-=======
 	alert('The winner is: ' + x);
->>>>>>> dev
 };
