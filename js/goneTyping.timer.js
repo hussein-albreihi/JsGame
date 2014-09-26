@@ -18,5 +18,8 @@ goneTyping.timer = (function () {
 		console.log('Timer getting time');
 		return resultTime;
 	};
+	that.penaltyTime = function () {
+		startTime.setSeconds(startTime.getSeconds() - 3);
+	};
 	return that;
 }());

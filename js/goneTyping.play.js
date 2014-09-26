@@ -22,9 +22,12 @@ goneTyping.play = function () {
 			//Fixa så denna endast gäller för enskild spelare.
 			if (goneTyping.logic.checkInput(playerWord, randomWord)) {
 				points = points + 1;
+			} else {
+				goneTyping.timer.penaltyTime();
 			}
 			console.log('Player ' + i + ' points: ' + points);
 			console.log('____________________________________');
+
 		}
 		goneTyping.timer.stop();
 		var time = goneTyping.timer.getTime();
