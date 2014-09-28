@@ -42,20 +42,10 @@ goneTyping.logic.addTimeToPlayer = function (players, time) {
 	players.playerTime = time;
 };
 
-<<<<<<< HEAD
-//Do a scoreboard of the best player.
-goneTyping.logic.showScores = function (players) {
-	var min = 0,
-		winner = 0;
-	min = players[0].playerTime;
-	winner = players[0].player;
-	console.log('_________Scoreboard___________');
-=======
 //Return an array of the player with fastest time(name and time).
 goneTyping.logic.getScores = function (players) {
 	var min = players[0].playerTime,
 		winner = players[0].player;
->>>>>>> dev
 	for (var i = 0; i < players.length; i++) {
 		if (players[i].playerTime < min) {
 			min = players[i].playerTime;
