@@ -5,7 +5,6 @@ goneTyping.play = function () {
 		numberOfTries = goneTyping.ui.getNumberOfTries(),
 		playerWord,
 		randomWord;
-
 	for (var i = 0; i < players.length; i++) {
 		goneTyping.ui.getReady(players[i].player);
 		goneTyping.timer.start();

@@ -5,22 +5,25 @@ goneTyping.ui.setPlayerWord = function (word) {
 	var playerWord = prompt('Word: ' + word);
 	return String(playerWord);
 };
-
+//Ask how many players it should should store in the nOP variable.
 goneTyping.ui.getTotalPlayers = function () {
 	var numberOfPlayers = prompt('Please enter number of players!');
-	if (isNaN(numberOfPlayers)) {
-		goneTyping.play();
-	}
-	return Number(numberOfPlayers);
+	return numberOfPlayers;
 };
-
+//Ask user for name of each player.
 goneTyping.ui.getPlayerNames = function () {
 	var playerName = prompt('What is the name of the player');
+	if (playerName === null) {
+		return goneTyping.ui.getPlayerNames();
+	}
 	return String(playerName);
 };
 
 goneTyping.ui.getNumberOfTries = function () {
 	var totalTries = prompt('How many times do you want to try?');
+	if (totalTries <= 0 || isNaN(totalTries)) {
+		return goneTyping.ui.getNumberOfTries();
+	}
 	return Number(totalTries);
 };
 
