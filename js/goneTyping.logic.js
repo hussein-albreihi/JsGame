@@ -26,7 +26,7 @@ goneTyping.logic.createPlayers = function (numberOfPlayers) {
 	}
 	var players = [];
 	for (var i = 0; i < numberOfPlayers; i++) {
-		var playerName = goneTyping.ui.getPlayerNames();
+		var playerName = goneTyping.ui.getPlayerNames(i);
 		players.push(goneTyping.logic.playerFactory(playerName));
 	}
 	return players;
