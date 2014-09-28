@@ -13,6 +13,7 @@ goneTyping.ui.showRules = function () {
 	alert('Gone Typing \nThis is the game where you have to type the word displaying in the popup box as quickly as possible.\nIf you however misspell the word you will get penalty time.\nBe sure to write correct AND fast.\nGood luck and have fun.');
 };
 
+//A fine little bugtesting board, mainly for bugs but mostly for UI
 goneTyping.ui.displayTypedWords = function (playerWord, randomWord, player) {
 	console.log('________________________________');
 	console.log('Word was: ' + randomWord);
@@ -44,10 +45,10 @@ goneTyping.ui.getNumberOfTries = function () {
 
 //Prompt user to ready up
 goneTyping.ui.getReady = function (player) {
-	alert('Get ready Player ' + player);
+	alert('Get ready player ' + player);
 };
 
-//Showing the winner.
+//Displaying the winner.
 goneTyping.ui.displayWinner = function (winner, players) {
 	console.log('__Scoreboard____________________');
 	for (var i = 0; i < players.length; i++) {
