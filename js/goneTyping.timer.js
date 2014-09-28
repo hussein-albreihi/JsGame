@@ -1,5 +1,6 @@
 'use strict';
 goneTyping.timer = {};
+//Everything in here should be self explamatory
 goneTyping.timer = (function () {
 	var resultTime;
 	var startTime = new Date(),

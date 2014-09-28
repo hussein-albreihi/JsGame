@@ -15,8 +15,10 @@ goneTyping.logic.playerFactory = function (name, time) {
 };
 
 //Adds all the players made playerFactory to an array.
+//Also cheking what the user typed in. Cannot return less than 0.
+
 //This function breaks all the rules of namespacing.
-//Until no one notices it and complains about it, we will use it.
+//Until no one notices or and complains about it, we will use it.
 //Or until someone can give us a better solution.
 goneTyping.logic.createPlayers = function (numberOfPlayers) {
 	if (isNaN(numberOfPlayers) || numberOfPlayers <= 0) {
@@ -40,6 +42,7 @@ goneTyping.logic.addTimeToPlayer = function (players, time) {
 	players.playerTime = time;
 };
 
+<<<<<<< HEAD
 //Do a scoreboard of the best player.
 goneTyping.logic.showScores = function (players) {
 	var min = 0,
@@ -47,13 +50,17 @@ goneTyping.logic.showScores = function (players) {
 	min = players[0].playerTime;
 	winner = players[0].player;
 	console.log('_________Scoreboard___________');
+=======
+//Return an array of the player with fastest time(name and time).
+goneTyping.logic.getScores = function (players) {
+	var min = players[0].playerTime,
+		winner = players[0].player;
+>>>>>>> dev
 	for (var i = 0; i < players.length; i++) {
-		console.log('| Player: ' + players[i].player + ' | Time: ' + players[i].playerTime + ' |');
 		if (players[i].playerTime < min) {
 			min = players[i].playerTime;
 			winner = players[i].player;
 		}
 	}
-	console.log('_________________________');
 	return [min, winner];
 };

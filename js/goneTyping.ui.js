@@ -1,10 +1,24 @@
 'use strict';
 
 goneTyping.ui = {};
+//Taking in the random word, and displays it.
+//User have to enter the word as quickly as he can.
 goneTyping.ui.setPlayerWord = function (word) {
 	var playerWord = prompt('Word: ' + word);
-	return String(playerWord);
+	return String(playerWord.toLowerCase());
 };
+
+//Alerts the rules of the game.
+goneTyping.ui.showRules = function () {
+	alert('Gone Typing \nThis is the game where you have to type the word displaying in the popup box as quickly as possible.\nIf you however misspell the word you will get penalty time.\nBe sure to write correct AND fast.\nGood luck and have fun.');
+};
+
+goneTyping.ui.displayTypedWords = function (playerWord, randomWord, player) {
+	console.log('________________________________');
+	console.log('Word was: ' + randomWord);
+	console.log(player + ' typed: ' + playerWord);
+};
+
 //Ask how many players it should should store in the nOP variable.
 goneTyping.ui.getTotalPlayers = function () {
 	var numberOfPlayers = prompt('Please enter number of players!');
@@ -19,6 +33,7 @@ goneTyping.ui.getPlayerNames = function () {
 	return String(playerName);
 };
 
+//Ask user how many rounds he/she wanna play. Cannot set less than zero or zero.
 goneTyping.ui.getNumberOfTries = function () {
 	var totalTries = prompt('How many times do you want to try?');
 	if (totalTries <= 0 || isNaN(totalTries)) {
@@ -27,10 +42,17 @@ goneTyping.ui.getNumberOfTries = function () {
 	return Number(totalTries);
 };
 
+//Prompt user to ready up
 goneTyping.ui.getReady = function (player) {
 	alert('Get ready Player ' + player);
 };
 
-goneTyping.ui.showWinner = function (x) {
-	alert('The winner is: ' + x);
+//Showing the winner.
+goneTyping.ui.displayWinner = function (winner, players) {
+	console.log('__Scoreboard____________________');
+	for (var i = 0; i < players.length; i++) {
+		console.log('Player: ' + players[i].player + ' --- ' + 'Time: ' + players[i].playerTime);
+	}
+	console.log('________________________________');
+	alert('The winner is: ' + winner);
 };
