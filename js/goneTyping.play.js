@@ -1,11 +1,12 @@
 'use strict';
 
 goneTyping.play = function () {
+	goneTyping.ui.showRules();
+	//Game starts here
 	var players = goneTyping.logic.createPlayers(goneTyping.ui.getTotalPlayers()),
 		numberOfTries = goneTyping.ui.getNumberOfTries(),
 		playerWord,
 		randomWord;
-
 	for (var i = 0; i < players.length; i++) {
 		goneTyping.ui.getReady(players[i].player);
 		goneTyping.timer.start();
@@ -15,11 +16,11 @@ goneTyping.play = function () {
 			if (!goneTyping.logic.checkInput(playerWord, randomWord)) {
 				goneTyping.timer.penaltyTime();
 			}
+			goneTyping.ui.displayTypedWords(playerWord, randomWord, players[i].player);
 		}
 		goneTyping.timer.stop();
 		goneTyping.logic.addTimeToPlayer(players[i], goneTyping.timer.getTime());
-
 	}
-	var a = goneTyping.logic.showScores(players);
-	goneTyping.ui.showWinner(a[1]);
+	var a = goneTyping.logic.getScores(players);
+	goneTyping.ui.displayWinner(a[1], players);
 };
