@@ -5,7 +5,7 @@ $(function () {
 	//User have to enter the word as quickly as he can.
 	goneTyping.ui.setPlayerWord = function (word) {
 		var playerWord = 'Word: ' + word;
-		$('p').append('<p>' + word + '</p>');
+		$('#randomWord').text(word);
 		return String(playerWord.toLowerCase());
 	};
 
