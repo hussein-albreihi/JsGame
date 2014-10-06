@@ -1,42 +1,49 @@
 <!DOCTYPE html>
-<html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
 </head>
+<title>GoneTyping</title>
 <body>
-    <div id="wrapper">
+    <div id="wrapper_720">
         <header>
-            <h1>Gone Typing<div class="cursor">_</div></h1>
+            <h1>Gone Typing</h1>
         </header>
-
-        <!-- Will be hidden after players are added -->
-        <div class="allPlayers">
-           <label class ="">
-              <span>Name</span>
-              <input type="text">
-                <span>Name</span>
-              <input type="text">
-                <span>Name</span>
-              <input type="text">
-          </label>
+        <div class = "userInteraction">
+            <div id="randomWord">
+                <h3>randomWord</h3>
+            </div>
+            <input type="text" id="userInput"></input> 
         </div>
+        <nav class ="gameMenu">
+            <div id ="menuButton" class="menuSelected">
+                Start
+            </div>
+            <div id ="menuButton">
+                Players
+            </div>
+            <div id ="menuButton">
+                Words
+            </div>
+        </nav>
+        <div class="clearfix"></div>
 
-        <div class="theGame">
-            <h2>Type the word: banana</h2>
-            <input type="text">
-        </div>
+    </div>
+    <div class ="scoreboard">
+        <ul>
+            <h2>ScoreBoard!</h2>
+            <li>
 
-        <div>
-            <h2>Scoreboard</h2>
-        </div>
-</div>
-<script src="js/goneTyping.js"></script>
-<script src="js/goneTyping.words.js"></script>
-<script src="js/goneTyping.ui.js"></script>
-<script src="js/goneTyping.logic.js"></script>
-<script src="js/goneTyping.play.js"></script>
-<script src="js/goneTyping.timer.js"></script>
+            </li>
+        </ul>
+    </div> 
+    <script src='lib/jquery-1.js'></script>
+    <script src="js/navGoneTyping.js"></script>
+    <script src="js/goneTyping.js"></script>
+    <script src="js/goneTyping.words.js"></script>
+    <script src="js/goneTyping.ui.js"></script>
+    <script src="js/goneTyping.logic.js"></script>
+    <script src="js/goneTyping.play.js"></script>
+    <script src="js/goneTyping.timer.js"></script>
 </body>
-
 </html>
