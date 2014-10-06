@@ -37,7 +37,7 @@ input[type="text"] {
 	border-radius: none;
 	border: none;
 	border-bottom: solid 2px #c9c9c9;
-	transition: border 0.3s;
+	transition: border 1s;
 }
 
 .theGame input[type=text] {
