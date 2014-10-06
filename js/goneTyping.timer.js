@@ -17,7 +17,7 @@ goneTyping.timer = (function () {
 		return resultTime;
 	};
 	that.penaltyTime = function () {
-		startTime.setSeconds(startTime.getSeconds() - 3);
+		startTime.setSeconds(startTime.getSeconds() - 7);
 	};
 	return that;
 }());
