@@ -27,7 +27,7 @@ goneTyping.ui.getTotalPlayers = function () {
 };
 //Ask user for name of each player.
 goneTyping.ui.getPlayerNames = function (numberOfPlayer) {
-	var grammar = ['first', 'second', 'third', 'fourth', 'figth', 'sixth', 'seventh', 'eigth', 'ninth', 'tenth'];
+	var grammar = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eigth', 'ninth', 'tenth'];
 	var playerName = prompt('What is the name of the ' + grammar[numberOfPlayer] + ' player');
 	if (playerName === null) {
 		return goneTyping.ui.getPlayerNames(numberOfPlayer);
