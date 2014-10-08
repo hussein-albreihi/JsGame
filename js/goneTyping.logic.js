@@ -21,9 +21,10 @@ goneTyping.logic.playerFactory = function (name, time) {
 //Until no one notices or and complains about it, we will use it.
 //Or until someone can give us a better solution.
 goneTyping.logic.createPlayers = function (numberOfPlayers) {
-	if (isNaN(numberOfPlayers) || numberOfPlayers <= 0) {
-		return goneTyping.logic.createPlayers(goneTyping.ui.getTotalPlayers());
-	}
+	parseInt(numberOfPlayers);
+	// if (isNaN(numberOfPlayers) || numberOfPlayers <= 0) {
+	// 	return goneTyping.logic.createPlayers(goneTyping.ui.getTotalPlayers());
+	// }
 	var players = [];
 	for (var i = 0; i < numberOfPlayers; i++) {
 		var playerName = goneTyping.ui.getPlayerNames(i);
