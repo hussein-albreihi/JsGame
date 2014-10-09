@@ -14,8 +14,16 @@ $(function () {
 		return String(playerWord.toLowerCase());
 	};
 	//Alerts the rules of the game.
-	goneTyping.ui.showRules = function () {
-		alert('Gone Typing \nThis is the game where you have to type the word displaying in the popup box as quickly as possible.\nIf you however misspell the word you will get penalty time.\nBe sure to write correct AND fast.\nGood luck and have fun.');
+	goneTyping.ui.showRules = function (time) {
+		$('#showRules').show();
+		setTimeout(function () {
+			$('#showRules').hide();
+
+		}, time);
+
+
+		//$('#popWord').append('<p>' + 'Gone Typing \nThis is the game where you have to type the word displaying in the popup box as quickly as possible.\nIf you however misspell the word you will get penalty time.\nBe sure to write correct AND fast.\nGood luck and have fun.' + '</p>');
+		//alert('Gone Typing \nThis is the game where you have to type the word displaying in the popup box as quickly as possible.\nIf you however misspell the word you will get penalty time.\nBe sure to write correct AND fast.\nGood luck and have fun.');
 	};
 
 	//A fine little bugtesting board, mainly for bugs but mostly for UI
@@ -27,13 +35,18 @@ $(function () {
 
 	//Ask how many players it should should store in the nOP variable.
 	goneTyping.ui.getTotalPlayers = function () {
-		var numberOfPlayers = prompt('Please enter the number of players!');
-		return numberOfPlayers;
+		$('#popWord').append('<p>' + 'Please enter the number of players!');
+
+		//var numberOfPlayers = 
+
+		//return numberOfPlayers;
 	};
 	//Ask user for name of each player.
 	goneTyping.ui.getPlayerNames = function (numberOfPlayer) {
 		var grammar = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eigth', 'ninth', 'tenth'];
-		var playerName = prompt('What is the name of the ' + grammar[numberOfPlayer] + ' player');
+		//var playerName = prompt('What is the name of the ' + grammar[numberOfPlayer] + ' player');
+		$('#popWord').text('What is the name of the ' + grammar[numberOfPlayer] + ' player');
+
 		if (playerName === null) {
 			return goneTyping.ui.getPlayerNames(numberOfPlayer);
 		}
