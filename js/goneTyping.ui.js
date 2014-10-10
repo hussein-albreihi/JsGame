@@ -10,7 +10,7 @@ $(function () {
 	};
 	goneTyping.ui.displayRandomWord = function (word) {
 		$('#randomWord').children('h3').text(word);
-		console.log(word);
+		console.log('The word is: ' + word);
 	};
 
 	//Alerts the rules of the game.
@@ -35,8 +35,8 @@ $(function () {
 	};
 
 	//Prompt user to ready up
-	goneTyping.ui.getReady = function (player) {
-		alert('Get ready player ' + player);
+	goneTyping.ui.displayPlayer = function (player) {
+		$('h2').text(player + '\'s turn');
 	};
 
 	//Displaying the winner.
