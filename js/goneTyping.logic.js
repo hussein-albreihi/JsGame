@@ -6,6 +6,8 @@ goneTyping.logic.getRandomWord = function () {
 	return String(goneTyping.words.wordList[Math.floor(Math.random() * goneTyping.words.wordList.length)]);
 };
 
+
+
 //Create a new player to a playerFactory object.
 goneTyping.logic.playerFactory = function (name, time) {
 	var that = {};
@@ -20,17 +22,30 @@ goneTyping.logic.playerFactory = function (name, time) {
 //This function breaks all the rules of namespacing.
 //Until no one notices or and complains about it, we will use it.
 //Or until someone can give us a better solution.
-goneTyping.logic.createPlayers = function (numberOfPlayers) {
-	parseInt(numberOfPlayers);
+goneTyping.logic.createPlayers = function (getTotalPlayers) {
+	parseInt(getTotalPlayers);
 	// if (isNaN(numberOfPlayers) || numberOfPlayers <= 0) {
 	// 	return goneTyping.logic.createPlayers(goneTyping.ui.getTotalPlayers());
 	// }
 	var players = [];
-	for (var i = 0; i < numberOfPlayers; i++) {
-		var playerName = goneTyping.ui.getPlayerNames(i);
+	var playerInput = $('#userInput').val();
+
+	console.log(playerInput);
+
+	$.each(function () {
+		var playerName = goneTyping.ui.getPlayerNames;
+		console.log(playerName);
 		players.push(goneTyping.logic.playerFactory(playerName));
-	}
-	return players;
+		console.log(players);
+		return players;
+	});
+
+	// for (var i = 0; i < getTotalPlayers; i++) {
+	// 	var playerName = goneTyping.ui.getPlayerNames(i);
+	// 	players.push(goneTyping.logic.playerFactory(playerName));
+	// 	console.log(players);
+	// }
+	// return players;
 };
 
 //Retruns true or false depending if the player word is the same as randomword

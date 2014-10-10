@@ -36,10 +36,7 @@ $(function () {
 	//Ask how many players it should should store in the nOP variable.
 	goneTyping.ui.getTotalPlayers = function () {
 		$('#popWord').append('<p>' + 'Please enter the number of players!');
-
-		//var numberOfPlayers = 
-
-		//return numberOfPlayers;
+		return $('#userInput').val();
 	};
 	//Ask user for name of each player.
 	goneTyping.ui.getPlayerNames = function (numberOfPlayer) {
@@ -47,19 +44,15 @@ $(function () {
 		//var playerName = prompt('What is the name of the ' + grammar[numberOfPlayer] + ' player');
 		$('#popWord').text('What is the name of the ' + grammar[numberOfPlayer] + ' player');
 
-		if (playerName === null) {
-			return goneTyping.ui.getPlayerNames(numberOfPlayer);
-		}
-		return String(playerName);
+		return $('#userInput').val();
 	};
 
 	//Ask user how many rounds he/she wanna play. Cannot set less than zero or zero.
 	goneTyping.ui.getNumberOfTries = function () {
-		var totalTries = prompt('How many words do you want to write?');
-		if (totalTries <= 0 || isNaN(totalTries)) {
-			return goneTyping.ui.getNumberOfTries();
-		}
-		return Number(totalTries);
+		$('.words').val().each(function () {
+			console.log($('#userInputWords'));
+
+		});
 	};
 
 	//Prompt user to ready up
@@ -76,4 +69,42 @@ $(function () {
 		console.log('________________________________');
 		alert('The winner is: ' + winner);
 	};
+
 });
+
+
+var hideAllPanels, showSelectedPanel, removeActiveClassFromAllButtons, addActiveClassToSelectedButton, setButtonClick, i,
+	buttons = document.querySelectorAll('.menubar > div'),
+	panels = document.querySelectorAll('.panel');
+
+hideAllPanels = function () {
+	var i;
+	for (i = 0; i < panels.length; i = i + 1) {
+		panels[i].style.display = 'none';
+	}
+};
+showSelectedPanel = function (index) {
+	panels[index].style.display = 'block';
+
+};
+removeActiveClassFromAllButtons = function () {
+	var i;
+	for (i = 0; i < buttons.length; i = i + 1) {
+		buttons[i].className = '';
+	}
+
+};
+addActiveClassToSelectedButton = function (button) {
+	button.className = 'menuActive';
+};
+setButtonClick = function (numberClickedOn) {
+	buttons[numberClickedOn].onclick = function () {
+		hideAllPanels();
+		showSelectedPanel(numberClickedOn);
+		removeActiveClassFromAllButtons();
+		addActiveClassToSelectedButton(buttons[numberClickedOn]);
+	};
+};
+for (i = 0; i < buttons.length; i = i + 1) {
+	setButtonClick(i);
+}

@@ -24,7 +24,7 @@
 	// 	var a = goneTyping.logic.getScores(players);
 	// 	goneTyping.ui.displayWinner(a[1], players);
 	$(function () {
-		var numberOfPlayers,
+		var getTotalPlayers,
 			firstTime = true,
 			players;
 
@@ -36,11 +36,10 @@
 		$('#userInput').bind('keypress', function (e) {
 			if (e.keyCode === 13 && firstTime) {
 
-				numberOfPlayers = $(this).val();
-				console.log(numberOfPlayers);
-				players = goneTyping.logic.createPlayers(numberOfPlayers);
-
-				firstTime = false;
+				getTotalPlayers = $(this).val();
+				console.log(getTotalPlayers);
+				players = goneTyping.logic.createPlayers(getTotalPlayers);
+				firstTime = true;
 			}
 
 		});
