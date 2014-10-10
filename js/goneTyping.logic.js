@@ -1,5 +1,6 @@
 'use strict';
 goneTyping.logic = {};
+var players = [];
 
 //Get a random word from the list: wordList in goneTyping.words.js
 goneTyping.logic.getRandomWord = function () {
@@ -20,15 +21,9 @@ goneTyping.logic.playerFactory = function (name, time) {
 //This function breaks all the rules of namespacing.
 //Until no one notices or and complains about it, we will use it.
 //Or until someone can give us a better solution.
-goneTyping.logic.createPlayers = function (numberOfPlayers) {
-	if (isNaN(numberOfPlayers) || numberOfPlayers <= 0) {
-		return goneTyping.logic.createPlayers(goneTyping.ui.getTotalPlayers());
-	}
-	var players = [];
-	for (var i = 0; i < numberOfPlayers; i++) {
-		var playerName = goneTyping.ui.getPlayerNames(i);
-		players.push(goneTyping.logic.playerFactory(playerName));
-	}
+goneTyping.logic.createPlayers = function (name) {
+	players.push(goneTyping.logic.playerFactory(name));
+	$('#userInput').val('');
 	return players;
 };
 

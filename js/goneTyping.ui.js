@@ -8,6 +8,10 @@ $(function () {
 		$('#randomWord').text(word);
 		return String(playerWord.toLowerCase());
 	};
+	goneTyping.ui.displayRandomWord = function (word) {
+		$('#randomWord').children('h3').text(word);
+		console.log(word);
+	};
 
 	//Alerts the rules of the game.
 	goneTyping.ui.showRules = function () {
@@ -19,21 +23,6 @@ $(function () {
 		console.log('________________________________');
 		console.log('Word was: ' + randomWord);
 		console.log(player + ' typed: ' + playerWord);
-	};
-
-	//Ask how many players it should should store in the nOP variable.
-	goneTyping.ui.getTotalPlayers = function () {
-		var numberOfPlayers = prompt('Please enter the number of players!');
-		return numberOfPlayers;
-	};
-	//Ask user for name of each player.
-	goneTyping.ui.getPlayerNames = function (numberOfPlayer) {
-		var grammar = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eigth', 'ninth', 'tenth'];
-		var playerName = prompt('What is the name of the ' + grammar[numberOfPlayer] + ' player');
-		if (playerName === null) {
-			return goneTyping.ui.getPlayerNames(numberOfPlayer);
-		}
-		return String(playerName);
 	};
 
 	//Ask user how many rounds he/she wanna play. Cannot set less than zero or zero.

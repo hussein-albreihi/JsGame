@@ -47,26 +47,23 @@ input {
   margin:  0 auto;
 }
 
-#menuButton {
+.buttons {
   text-align: center;
   font-size: 25px;   
   float:left; 
   width: 30%;
-  margin-left: 17px;
-  -webkit-animation-name: greenPulse;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-}
+  margin-left: 17px; 
+  background-color: green;
 
-.menuSelected {
- -webkit-border-radius: .4em;
- color: black;
+}
+.isDisabled{
+  background-color: red; 
 }
 
 .scoreboard {
   width: 280px;
   border: 1px solid white;
-  display: none3;
+  display: none;
 }
 
 #randomWord {

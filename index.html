@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
 </head>
 <title>GoneTyping</title>
@@ -11,20 +11,15 @@
         </header>
         <div class = "userInteraction">
             <div id="randomWord">
-                <h3>randomWord</h3>
+                <h3></h3>
+                <h2></h2>
             </div>
             <input type="text" id="userInput"></input> 
         </div>
-        <nav class ="gameMenu">
-            <div id ="menuButton" class="menuSelected">
-                Start
-            </div>
-            <div id ="menuButton">
-                Players
-            </div>
-            <div id ="menuButton">
-                Words
-            </div>
+        <nav class ="buttons">
+            <div id ="startButton" class=" isDisabled">Start</div>
+            <div id ="addPlayersButton">Players</div>
+            <div id ="addDifficultysButton" class="isDisabled">Difficulty</div>
         </nav>
         <div class="clearfix"></div>
 
@@ -38,12 +33,11 @@
         </ul>
     </div> 
     <script src='lib/jquery-1.js'></script>
-    <script src="js/navGoneTyping.js"></script>
     <script src="js/goneTyping.js"></script>
     <script src="js/goneTyping.words.js"></script>
     <script src="js/goneTyping.ui.js"></script>
     <script src="js/goneTyping.logic.js"></script>
-    <script src="js/goneTyping.play.js"></script>
     <script src="js/goneTyping.timer.js"></script>
+    <script src="js/goneTyping.play.js"></script>
 </body>
 </html>
