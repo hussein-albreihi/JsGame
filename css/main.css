@@ -1,8 +1,7 @@
  html{
   height:100%;
-  background: url('dungeon.jpeg');
-  background-size: cover;
-  color:white;
+  background-color: gray;
+  color:black;
 }
 
 body{
@@ -12,10 +11,12 @@ body{
   clear: both;
 }
 
-#wrapper_720{
-  width: 720px;
-  margin: 0 auto;
-  border: 1px solid white;
+#startButton{
+border-bottom: 3px solid gray;
+}
+
+#wrapper{
+  width: 100%;
 }
 
 h1 {
@@ -27,53 +28,63 @@ h1 {
   max-width: 400px;
 }
 
-input {
-  width:400px;
+.userInteraction{
+  width: 32%;
+  float: left;
+  margin: 0 10px;
+}
+
+#userInput {
   font-size: 25px;
-  margin:auto 0;
   text-align: center;
-  border:solid 1px;
-  margin: 0 auto;
+  border:solid 0px;
   -webkit-animation-name: greenPulse;
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
 }
 
-.gameMenu {
- margin:100px auto;
-}
-.userInteraction, input{
+input{
   width: 100%;
   margin:  0 auto;
 }
 
 .buttons {
+  margin: 0 50px;
   text-align: center;
   font-size: 25px;   
-  float:left; 
-  width: 30%;
-  margin-left: 17px; 
-  background-color: green;
-
-}
-.isDisabled{
-  background-color: red; 
+  background-color: #ccc;
+  width: 20%;
+  float: left;
 }
 
-.scoreboard {
-  width: 280px;
-  border: 1px solid white;
+#scoreboard {
+  height: 150px;
+  font-size: 14px;
+  margin: 0 auto;
   display: none;
+  overflow: scroll-auto
+}
+li{
+  list-style: none;
 }
 
 #randomWord {
-  border:1px solid yellow;
+  height: 150px;
   text-align: center;
   font-size: 25px;
 }
+#difficulty{
+  width: 33%;
+  float: left;
+visibility: hidden; 
+}
 
 @-webkit-keyframes greenPulse {
- from { background-color: #FFAC2A; -webkit-box-shadow: 0 0 9px #333; }
- 50% { background-color: #FF832A; -webkit-box-shadow: 0 0 18px #FF832A; }
- to { background-color: #FFAC2A; -webkit-box-shadow: 0 0 9px #333; }
+ from { background-color: #ccc; -webkit-box-shadow: 0 0 9px #ccc; }
+ 50% { background-color: #ddd; -webkit-box-shadow: 0 0 18px #FF832A; }
+ to { background-color: #ccc; -webkit-box-shadow: 0 0 9px #ccc; }
+}
+
+.ui-effects-transfer {
+  border: 1px dotted white;
 }

@@ -6,14 +6,12 @@
 		randomizedWord = goneTyping.logic.getRandomWord();
 		goneTyping.ui.displayRandomWord(randomizedWord);
 	};
-	// var clearScreen = function () {
-	// 	$('h3').text('');
-	// 	$('h2').text('');
-	// 	$('#userInput').val('');
-	// };
-
+	var playSound = function (sound) {
+		var audio = document.createElement('audio');
+		audio.src = ('sound/' + sound + '.wav');
+		audio.play();
+	};
 	checkUserChoice = function (buttonSelect) {
-		console.log('Button: ' + buttonSelect);
 		$('#userInput').unbind('change');
 		numberOfTries = 0;
 		user = 0;
@@ -24,63 +22,51 @@
 			getRandomWord();
 			$('#userInput').change(function () {
 				var input = $(this).val();
-				// if (user > players.length) {
-				// 	console.log('bajs');
-				// 	clearScreen();
-				// 	return;
-				// } else if (numberOfTries === 2) {
-				// 	goneTyping.timer.stop();
-				// 	goneTyping.logic.addTimeToPlayer(players[user], goneTyping.timer.getTime());
-				// 	getRandomWord();
-
-				// 	goneTyping.ui.displayPlayer(players[user].player);
-				// 	goneTyping.timer.start();
-				// 	user++;
-				// 	numberOfTries = 0;
-				// } else if ($(this).val() === randomizedWord) {
-				// 	console.log(players[user].player + ' correct word: ' + randomizedWord);
-				// 	getRandomWord();
-				// 	numberOfTries++;
-				// } else if ($(this).val() !== randomizedWord) {
-				// 	console.log(players[user].player + ' typed wrong word: ' + randomizedWord);
-				// 	goneTyping.timer.penaltyTime();
-
-				// }
-				// 					$('#userInput').unbind('change');
-
-				if (numberOfTries === 2) {
-					goneTyping.timer.stop();
-					goneTyping.logic.addTimeToPlayer(players[user], goneTyping.timer.getTime());
-					user++;
-					goneTyping.timer.start();
-					console.log(user);
-					console.log(players.length);
-					if (user >= players.length) {
-						console.log('End');
-						return;
+				//If input is correct
+				if (input === randomizedWord) {
+					playSound('correct');
+					numberOfTries = numberOfTries + 1;
+					//Checks if number is less than 2, then it shall randomize a new word.
+					if (numberOfTries < 2) {
+						getRandomWord();
+					} // If numberoftries is 2 or larger then go and start round for next player 
+					else {
+						goneTyping.timer.stop();
+						goneTyping.logic.addTimeToPlayer(players[user], goneTyping.timer.getTime());
+						user = user + 1;
+						goneTyping.timer.start();
+						// if users are more than max users, end game and draw a scoreboard.
+						if (user >= players.length) {
+							goneTyping.ui.clearScreen();
+							goneTyping.ui.showScoreboard(players);
+							$('#scoreboard').show(1000);
+							$('#userInput').unbind('change');
+							return;
+						}
+						goneTyping.ui.displayPlayer(players[user].player);
+						getRandomWord();
+						numberOfTries = 0;
 					}
-					goneTyping.ui.displayPlayer(players[user].player);
-					numberOfTries = 0;
-				} else if (input === randomizedWord) {
-					console.log('Rett ord');
-					numberOfTries++;
-				} else if (input !== randomizedWord) {
-					console.log('Fel ord');
+				} //If input is wrong 
+				else if (input !== randomizedWord) {
+					playSound('false');
+					$('#userInput').effect('shake');
 					goneTyping.timer.penaltyTime();
+				} else {
+					getRandomWord();
 				}
-				getRandomWord();
 			});
-
-			//PLAYERS BUTTON
-		} else if (buttonSelect === 'Players') {
+		} //PLAYERS BUTTON
+		else if (buttonSelect === 'Players') {
+			goneTyping.ui.clearScreen();
 			$('#randomWord').children('h3').text('Add a player');
 			$('#userInput').change(function () {
 				players = goneTyping.logic.createPlayers($(this).val());
+				$(this).effect('transfer', {
+					to: $('#addPlayersButton')
+				}, 500);
 			});
-			console.log(players);
-
-			//DIFFICULTY BUTTON
-		} else if (buttonSelect === 'Difficulty') {}
+		}
 
 	};
 
